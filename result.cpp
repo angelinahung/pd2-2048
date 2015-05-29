@@ -20,5 +20,5 @@ void result::on_pushButton_clicked()
 
 void result::on_pushButton_2_clicked()
 {
-    emit reset();
+    this->hide();
 }

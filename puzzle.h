@@ -5,6 +5,7 @@
 #include <QWidget>
 #include <QLabel>
 #include <QLCDNumber>
+#include <result.h>
 
 namespace Ui {
 class puzzle;
@@ -28,7 +29,7 @@ private slots:
     void on_pushButton_3_clicked();
 
 private:
-    QPixmap *pix;
+    result *res;
     int score;
     void keyPressEvent(QKeyEvent *event);
     QLabel* lab[16];

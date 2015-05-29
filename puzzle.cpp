@@ -48,6 +48,7 @@ puzzle::~puzzle()
     {
         delete lab[i];
     }
+    delete res;
 }
 
 
@@ -246,84 +247,86 @@ void puzzle::output(){
             lab[i]->setPixmap(QPixmap(":/new/prefix1/z.png"));
             lab[i]->setScaledContents(true);
             lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
-            lab[i]->setText("");
         }
         if(calculate[i]==2){
+            lab[i]->setText("2");
+            lab[i]->setAlignment(Qt::AlignCenter);
             /*lab[i]->setPixmap(QPixmap(":/new/prefix1/2.jpg"));
             lab[i]->setScaledContents(true);
             lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
-            */lab[i]->setText("2");
-            lab[i]->setAlignment(Qt::AlignCenter);
+            */
         }
         if(calculate[i]==4){
-            /*lab[i]->setPixmap(QPixmap(":/new/prefix1/4.jpg"));
-            lab[i]->setScaledContents(true);
-            lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);*/
             lab[i]->setText("4");
             lab[i]->setAlignment(Qt::AlignCenter);
+            //lab[i]->setPixmap(QPixmap(":/new/prefix1/4.jpg"));
+            //lab[i]->setScaledContents(true);
+            //lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
         }
         if(calculate[i]==8){
-            /*lab[i]->setPixmap(QPixmap(":/new/prefix1/8.jpg"));
-            lab[i]->setScaledContents(true);
-            lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
-            */lab[i]->setText("8");
+            lab[i]->setText("8");
             lab[i]->setAlignment(Qt::AlignCenter);
+            //lab[i]->setPixmap(QPixmap(":/new/prefix1/8.jpg"));
+            //lab[i]->setScaledContents(true);
+            //lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
         }
         if(calculate[i]==16){
-            /*lab[i]->setPixmap(QPixmap(":/new/prefix1/16.jpg"));
-            lab[i]->setScaledContents(true);
-            lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
-            */lab[i]->setText("16");
+            lab[i]->setText("16");
             lab[i]->setAlignment(Qt::AlignCenter);
+            //lab[i]->setPixmap(QPixmap(":/new/prefix1/16.jpg"));
+            //lab[i]->setScaledContents(true);
+            //lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
         }
         if(calculate[i]==32){
-            /*lab[i]->setPixmap(QPixmap(":/new/prefix1/32.jpg"));
-            lab[i]->setScaledContents(true);
-            lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
-            */lab[i]->setText("32");
+            lab[i]->setText("32");
             lab[i]->setAlignment(Qt::AlignCenter);
+            //lab[i]->setPixmap(QPixmap(":/new/prefix1/32.jpg"));
+            //lab[i]->setScaledContents(true);
+            //lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
         }
         if(calculate[i]==64){
-            /*lab[i]->setPixmap(QPixmap(":/new/prefix1/64.jpg"));
-            lab[i]->setScaledContents(true);
-            lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
-            */lab[i]->setText("64");
+            lab[i]->setText("64");
             lab[i]->setAlignment(Qt::AlignCenter);
+            //lab[i]->setPixmap(QPixmap(":/new/prefix1/64.jpg"));
+            //lab[i]->setScaledContents(true);
+            //lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
         }
         if(calculate[i]==128){
-            /*lab[i]->setPixmap(QPixmap(":/new/prefix1/128.jpg"));
-            lab[i]->setScaledContents(true);
-            lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
-            */lab[i]->setText("128");
+            lab[i]->setText("128");
             lab[i]->setAlignment(Qt::AlignCenter);
+            //lab[i]->setPixmap(QPixmap(":/new/prefix1/128.jpg"));
+            //lab[i]->setScaledContents(true);
+            //lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
         }
         if(calculate[i]==256){
-            /*lab[i]->setPixmap(QPixmap(":/new/prefix1/256.jpg"));
-            lab[i]->setScaledContents(true);
-            lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
-            */lab[i]->setText("256");
+            lab[i]->setText("256");
             lab[i]->setAlignment(Qt::AlignCenter);
+            //lab[i]->setPixmap(QPixmap(":/new/prefix1/256.jpg"));
+            //lab[i]->setScaledContents(true);
+            //lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
         }
         if(calculate[i]==512){
-            /*lab[i]->setPixmap(QPixmap(":/new/prefix1/512.jpg"));
-            lab[i]->setScaledContents(true);
-            lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
-            */lab[i]->setText("512");
+            lab[i]->setText("512");
             lab[i]->setAlignment(Qt::AlignCenter);
+            //lab[i]->setPixmap(QPixmap(":/new/prefix1/512.jpg"));
+            //lab[i]->setScaledContents(true);
+            //lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
         }
         if(calculate[i]==1024){
-            /*lab[i]->setPixmap(QPixmap(":/new/prefix1/1024.jpg"));
-            lab[i]->setScaledContents(true);
-            lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
-            */lab[i]->setText("1024");
+            lab[i]->setText("1024");
             lab[i]->setAlignment(Qt::AlignCenter);
+            //lab[i]->setPixmap(QPixmap(":/new/prefix1/1024.jpg"));
+            //lab[i]->setScaledContents(true);
+            //lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
         }
         if(calculate[i]==2048){
-            /*lab[i]->setPixmap(QPixmap(":/new/prefix1/2048.jpg"));
+            lab[i]->setText("2048\n WIN!");
+            lab[i]->setAlignment(Qt::AlignCenter);
+            lab[i]->setPixmap(QPixmap(":/new/prefix1/2048.jpg"));
             lab[i]->setScaledContents(true);
             lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
-            */lab[i]->setText("2048\n WIN!");
-            lab[i]->setAlignment(Qt::AlignCenter);
+            res=new result;
+            res->show();
         }
     }
     n[0]->display(score);
