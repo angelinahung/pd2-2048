@@ -13,8 +13,19 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        start.cpp
+        start.cpp \
+    puzzle.cpp \
+    result.cpp
 
-HEADERS  += start.h
+HEADERS  += start.h \
+    puzzle.h \
+    result.h
 
-FORMS    += start.ui
+FORMS    += start.ui \
+    puzzle.ui \
+    result.ui
+
+RESOURCES += \
+    bg.qrc
+
+DISTFILES +=

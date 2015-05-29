@@ -12,3 +12,10 @@ start::~start()
 {
     delete ui;
 }
+
+void start::on_pushButton_clicked()
+{
+    puzzlegame = new puzzle(this);
+    puzzlegame->show();
+    this->hide();
+}

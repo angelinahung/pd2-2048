@@ -878,7 +878,7 @@
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>RESTART</string>
+     <string>NEW GAME</string>
     </property>
    </widget>
    <zorder>label_3</zorder>

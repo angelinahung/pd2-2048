@@ -12,3 +12,13 @@ result::~result()
 {
     delete ui;
 }
+
+void result::on_pushButton_clicked()
+{
+    this->close();
+}
+
+void result::on_pushButton_2_clicked()
+{
+    emit reset();
+}
