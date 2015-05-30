@@ -10,6 +10,8 @@
 #include <QFont>
 #include <QPainter>
 #include <QMessageBox>
+
+//constructor
 puzzle::puzzle(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::puzzle)
@@ -40,7 +42,7 @@ puzzle::puzzle(QWidget *parent) :
         calculate[i]=0;
     }
 }
-
+//destructor
 puzzle::~puzzle()
 {
     delete ui;
@@ -49,21 +51,22 @@ puzzle::~puzzle()
         delete lab[i];
     }
     delete res;
+    delete n[1];
 }
 
-
+//close button
 void puzzle::on_pushButton_clicked()
 {
     this->close();
 }
-
+//restart button
 void puzzle::on_pushButton_2_clicked()
 {
     emit reset();
     score=0;
     on_pushButton_3_clicked();
 }
-
+//when arrow key is pressed
 void puzzle::keyPressEvent(QKeyEvent *event)
 {
     int i,j,k=0;
@@ -221,26 +224,27 @@ void puzzle::keyPressEvent(QKeyEvent *event)
         }
     }
 }
-
+//when start button clicked,first display 2 label randomly to be combine or direct
 void puzzle::on_pushButton_3_clicked()
 {
     int rand1,rand2;
     srand(time(NULL));
     for(int i=0;i<16;i++){
-        lab[i]->setText("");
+        lab[i]->setText("");//first set label to ""
         calculate[i]=0;
     }
-    rand1=rand()%16;
+    rand1=rand()%16; //random place
     rand2=rand()%16;
     while(rand1==2){
         rand2=rand()%16;
     }
+    //exists 2 and 4 randomly
     calculate[rand1]=2;
     calculate[rand2]=4;
-    output();
-    n[0]->display(0);
+    output();//display the text/picture
+    n[0]->display(0);//score display
 }
-
+//The output number
 void puzzle::output(){
     for(int i=0;i<16;i++){
         if(calculate[i]==0){
@@ -325,25 +329,30 @@ void puzzle::output(){
             lab[i]->setPixmap(QPixmap(":/new/prefix1/2048.jpg"));
             lab[i]->setScaledContents(true);
             lab[i]->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
+            ui->label_20->setPixmap(QPixmap(":/new/prefix1/2048.jpg"));
+            ui->label_20->setScaledContents(true);
+            ui->label_20->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
             res=new result;
             res->show();
         }
     }
-    n[0]->display(score);
+    n[0]->display(score);//display the current score
 }
+//the new random number that appear after arrowkey already pressed,and there is only 2 probability:2 or 4
 int puzzle::randomnum(){
     int x,y;
     srand(time(NULL));
-    x=rand()%16;
-    while(calculate[x]!=0){
+    x=rand()%16;//random taking a place from 16 label that is zero or dont have value
+    while(calculate[x]!=0){//if there is a value,then take the random again
         x=rand()%16;
     }
-    y=rand()%2;
+    //random switch
+    y=rand()%2;//2 probability
     if(y==0){
-        calculate[x]=2;
+        calculate[x]=2;//compute 2
     }
     if(y==1){
-        calculate[x]=4;
+        calculate[x]=4;//compute 4
     }
     return 0;
 }
@@ -500,8 +509,10 @@ void puzzle::adddown(){
         }
     }
 }
+//if there is anything can be combine,so it will return 1 , if not then gameover
 int puzzle::gameover(){
     int i,j;
+    //if there is the same value in 4 direction,return 1
     for(i=0;i<13;i+=4){
         for(j=0;j<4;j++){
             if(j-1>=0){
@@ -526,13 +537,14 @@ int puzzle::gameover(){
             }
         }
     }
-    for(i=0;i<16;i++){
+    for(i=0;i<16;i++){//if there is a space so it must continue
         if(calculate[i]==0){
             return 1;
         }
     }
     return 0;
 }
+//when there is no item to be combine, game over!!
 void puzzle::over(){
     if(gameover()==0){
         QMessageBox::information(this,"YOU　LOSE!!","GAME OVER");
